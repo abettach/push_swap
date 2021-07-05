@@ -15,7 +15,8 @@ void    ft_sort_5numbers(t_cheker *c)
     int j = 0;
     int len;
     median_stack = c->new_tab[c->len / 2];
-    free(c->new_tab);
+    if (c->new_tab)
+        free(c->new_tab);
     ft_copy_stack(c);
     while (i < c->len)
     {

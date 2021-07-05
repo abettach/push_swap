@@ -14,9 +14,10 @@ SRCS		=	./srcs/utils/ft_do_a.c \
 
 PUSH		= 	./srcs/push_swap/ft_sort_3numbers.c \
 				./srcs/push_swap/ft_sort_5numbers.c \
-				./srcs/push_swap/push_swap.c
+				./srcs/push_swap/push_swap.c \
+				./srcs/push_swap/ft_sort_more.c 
 
-CHECKER		= ./srcs/checker/checker.c
+CHECKER		=	./srcs/checker/checker.c
 
 
 

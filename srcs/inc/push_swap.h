@@ -52,7 +52,7 @@ void    ft_sort_table(t_cheker *c);
 int     ft_get_case(t_cheker *c);
 void    ft_sort_3numbers(t_cheker *c);
 void    ft_sort_5numbers(t_cheker *c);
-
+void    ft_sort_more(t_cheker *c, int nbr_chunk);
 
 //stack a
 void    ft_do_sa(t_cheker *c, int cheker);
