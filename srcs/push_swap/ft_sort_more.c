@@ -72,15 +72,14 @@ int	get_big_nbr(t_cheker *c)
 {
 	int	*tmp;
 	int		ret;
-
-	tmp = malloc(sizeof(int) * c->len + 1);
+	tmp = malloc(sizeof(int) * (ft_get_len(c->list_b)) + 1);
 	int i= 1;
-	while (c->list_a[i])
+	while (i < ft_get_len(c->list_b))
 	{
-		tmp[i] = c->list_a[i];
+		tmp[i] = c->list_b[i];
 		i++;
 	}
-	ret = c->list_a[0];
+	ret = c->list_b[0];
 	i = 0;
 	while (tmp[i])
 	{
@@ -95,19 +94,12 @@ int	get_big_nbr_pos(t_cheker *c, int nbr)
 {
 	int	*tmp;
 	int		ret;
-
-	tmp = malloc(sizeof(int) * c->len);
+	tmp = malloc(sizeof(int) * c->len + 1);
 	int i= 0;
-	while (c->list_a[i])
+	//printf("len ---- %d\n",ft_get_len(c->list_b));
+	while (i < ft_get_len(c->list_b))
 	{
-		tmp[i] = c->list_a[i];
-		i++;
-	}
-	ret = c->list_a[0];
-	i = 0;
-	while (tmp[i])
-	{
-		if (tmp[i] == nbr)
+		if (c->list_b[i] == nbr)
 			return i;
 		i++;
 	}
@@ -121,16 +113,17 @@ void	last_sort(t_cheker *c, int pos_num, int midle_stack)
 	int	stack_lengt;
 
 	i = 0;
+	//print_stack_b(c);
 	stack_lengt = ft_get_len(c->list_b);
-				printf("len = %d\n",stack_lengt);
+			//	printf("len = %d\n",stack_lengt);
 	while (i < stack_lengt)
 	{
-		midle_stack = ft_get_len(c->list_b) / 2;
-				printf("midl = %d\n",midle_stack);
+		midle_stack = stack_lengt / 2;
 		big_nbr = get_big_nbr(c);
-				printf("big = %d\n",big_nbr);
 		pos_num = get_big_nbr_pos(c, big_nbr);
-				printf("pos = %d\n",pos_num);
+	/* 			printf("midl = %d.",midle_stack);
+				printf("big = %d.",big_nbr);
+				printf("pos = %d\n",pos_num); */
 		if (pos_num <= midle_stack)
 		{
 			while (pos_num-- > 0)
@@ -189,6 +182,5 @@ void    ft_sort_more(t_cheker *c, int nbr_chunk)
 		chunk_size += inc;
 		i++;
 	}
-	//print_stack_b(c);
 	solution_for_more_2(c,pb);
 }

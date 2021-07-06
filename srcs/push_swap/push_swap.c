@@ -31,8 +31,31 @@ void    ft_copy_stack(t_cheker *c)
     }
 }
 
+int		ft_double_check2(t_cheker *c)
+{
+	int i = 0;
+	int j= 0;
+	while (c->list_a[i])
+	{
+		j = i + 1;
+		while (c->list_a[j])
+		{
+			if (c->list_a[j] == c->list_a[i])
+				return 1;
+			j++;
+		}
+		i++;
+	}
+	return 0;
+}
+
 void    ft_push_swap(t_cheker *c)
-{   
+{
+    if (ft_double_check2(c) == 1)
+	{
+		//ft_error("Error\n");
+		return  ;
+	}
     c->len = ft_get_len(c->list_a);
     ft_copy_stack(c);
     ft_sort_table(c);
@@ -45,10 +68,10 @@ void    ft_push_swap(t_cheker *c)
         ft_sort_3numbers(c);
     else if (c->len == 4 || c->len == 5)
         ft_sort_5numbers(c);
-    else if (c->len > 5 && c->len <= 188)
+    else if (c->len > 5 && c->len <= 100)
         ft_sort_more(c,5);
-    else if (c->len > 100 && c->len <= 588)
-        ft_sort_more(c,13);
+    else if (c->len > 100 && c->len <= 500)
+        ft_sort_more(c, 13);
 }
 
 int     main(int ac, char **av)

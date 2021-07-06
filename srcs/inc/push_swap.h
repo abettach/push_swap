@@ -41,6 +41,7 @@ void        ft_error(char   *str);
 void    ft_strjoin_command(t_cheker *c, char *arg);
 void    print_stack_a(t_cheker *c);
 void    print_stack_b(t_cheker *c);
+int		ft_double_check(t_cheker *c);
 
 //checker 
 void	ft_checker(t_cheker *c);

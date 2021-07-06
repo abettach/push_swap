@@ -88,14 +88,14 @@ void	ft_checker(t_cheker *c)
 {
 	int r = 0;
 	int  i = 0;
+	if (ft_double_check(c) == 1)
+	{
+		//ft_error("Error\n");
+		return ;
+	}
 	c->command = malloc(sizeof(char *) * 2);
 	c->command[0] = ft_strdup("start");
 	c->command[1] = NULL;
-	if (ft_double_check(c) == 1)
-	{
-		ft_error("Dublicate number");
-		return ;
-	}
 	while (1)
 	{
 		r = get_next_line(0,&c->tab);
