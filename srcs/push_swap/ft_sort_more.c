@@ -151,6 +151,7 @@ void	solution_for_more_2(t_cheker *c,int pb)
 			ft_do_sa(c, 0);
 	}
 	i = 0;
+	int len = ft_get_len(c->list_a);
 	while (i <= ft_get_len(c->list_a))
 	{
 		pb++;

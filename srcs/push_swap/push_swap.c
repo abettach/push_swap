@@ -68,10 +68,13 @@ void    ft_push_swap(t_cheker *c)
         ft_sort_3numbers(c);
     else if (c->len == 4 || c->len == 5)
         ft_sort_5numbers(c);
-    else if (c->len > 5 && c->len <= 100)
-        ft_sort_more(c,5);
-    else if (c->len > 100 && c->len <= 500)
-        ft_sort_more(c, 13);
+    else if (c->len > 5 && c->len <= 500)
+    {
+        if (c->len <= 100)
+            ft_sort_more(c, 5);
+        else
+            ft_sort_more(c, 10);
+    }
 }
 
 int     main(int ac, char **av)

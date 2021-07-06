@@ -7,7 +7,7 @@ void	ft_get_args(t_cheker *c, char **av)
 	while (av[i])
 		i++;
 	i--;
-	c->list_a = malloc(sizeof(int) * (i + 1));
+	c->list_a = malloc(sizeof(int) * (i + 1+ 1));
 	i =  1;
 	int j = 0;
 	while (av[i])
