@@ -4,7 +4,7 @@ void    print_stack_a(t_cheker *c)
 {
     int i = 0;
 
-    while (c->list_a[i])
+    while (i < ft_get_len(c->list_a))
     {
         printf("a = %d\n",c->list_a[i]);
         i++;

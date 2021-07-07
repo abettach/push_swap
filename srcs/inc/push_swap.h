@@ -18,6 +18,8 @@ typedef struct s_cheker
     int     len;
     int     *new_tab;
     char    **swap_command;
+    int     len_b;
+    int     pb;
 }   t_cheker;
 
 int		get_next_line(const int fd, char **line);
@@ -42,6 +44,7 @@ void    ft_strjoin_command(t_cheker *c, char *arg);
 void    print_stack_a(t_cheker *c);
 void    print_stack_b(t_cheker *c);
 int		ft_double_check(t_cheker *c);
+int     ft_get_len_ini(char **av);
 
 //checker 
 void	ft_checker(t_cheker *c);
@@ -53,7 +56,7 @@ void    ft_sort_table(t_cheker *c);
 int     ft_get_case(t_cheker *c);
 void    ft_sort_3numbers(t_cheker *c);
 void    ft_sort_5numbers(t_cheker *c);
-void    ft_sort_more(t_cheker *c, int nbr_chunk);
+void    ft_sort_more(t_cheker *c, int nbr_chunk, int chunk_size);
 
 //stack a
 void    ft_do_sa(t_cheker *c, int cheker);
@@ -62,7 +65,7 @@ void    ft_do_rra(t_cheker *c, int cheker);
 void    ft_do_pa(t_cheker *c, int cheker);
 
 //stack b
-void    ft_do_pb(t_cheker *c, int cheker, int pb);
+void    ft_do_pb(t_cheker *c, int checker);
 void    ft_do_sb(t_cheker *c, int cheker);  
 void    ft_do_rb(t_cheker *c, int cheker);
 void    ft_do_rrb(t_cheker *c, int cheker);

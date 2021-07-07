@@ -1,16 +1,19 @@
 #include "../inc/push_swap.h"
 
 //push the first elemt of a to b
-void    ft_do_pb(t_cheker *c, int pb, int cheker)
+void    ft_do_pb(t_cheker *c, int cheker)
 {
     int i = 0;
     int j = 0;
     int index = 0;
     int *tmp;
 
-    if (pb == 1)
+    c->len--;
+	c->len_b++;
+    c->pb++;
+    if (c->pb == 1)
     {
-        c->list_b = malloc(sizeof(int) * (pb + 1));
+        c->list_b = malloc(sizeof(int) * (c->pb + 1));
         c->list_b[0] = c->list_a[0];
         c->list_b[1] = '\0';
         while (c->list_a[i + 1])
@@ -20,7 +23,7 @@ void    ft_do_pb(t_cheker *c, int pb, int cheker)
         }
         c->list_a[i] = '\0';
     }
-    else if (pb > 1)
+    else if (c->pb > 1)
     {
         while (c->list_b[i])
             i++;

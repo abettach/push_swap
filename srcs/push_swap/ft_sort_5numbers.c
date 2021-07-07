@@ -1,13 +1,5 @@
 #include "../inc/push_swap.h"
 
-int     ft_get_len(int  *stack_a)
-{
-    int i = 0;
-    while (stack_a[i])
-        i++;
-    return i;
-}
-
 void    ft_sort_5numbers(t_cheker *c)
 {
     int median_stack;
@@ -21,7 +13,7 @@ void    ft_sort_5numbers(t_cheker *c)
     while (i < c->len)
     {
         if (c->new_tab[i] < median_stack)
-            ft_do_pb(c, ++j,0);
+            ft_do_pb(c,0);
         else
             ft_do_ra(c, 0);
         i++;

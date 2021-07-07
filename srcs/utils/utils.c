@@ -1,5 +1,25 @@
 #include "../inc/push_swap.h"
 
+int     ft_get_len_ini(char **av)
+{
+    int i = 1;
+    int len = 0;
+    while (av[i])
+    {
+        i++;
+        len++;
+    }
+    return len;
+}
+
+int     ft_get_len(int  *stack_a)
+{
+    int i = 0;
+    while (stack_a[i])
+        i++;
+    return i;
+}
+
 void	ft_get_args(t_cheker *c, char **av)
 {
 	int i = 1;
@@ -10,16 +30,12 @@ void	ft_get_args(t_cheker *c, char **av)
 	c->list_a = malloc(sizeof(int) * (i + 1+ 1));
 	i =  1;
 	int j = 0;
-	while (av[i])
+	while (av[i] != NULL)
 	{
-		if (ft_strcmp(av[i],"0") == 0)
-			c->list_a[j] = -1;
-		else
-			c->list_a[j] = ft_atoi(av[i]);
+		c->list_a[j] = ft_atoi(av[i]);
 		i++;
 		j++;
 	}
-	c->list_a[j] = '\0';
 }
 
 void			ft_putchar(char c)

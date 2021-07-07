@@ -35,11 +35,10 @@ int	ft_check_sort(t_cheker *c)
 void	ft_sort(t_cheker *c)
 {
 	int i = 0;
-	int pb = 0;
 
 	while (c->command[i])
 	{
-		if (pb == 0)
+		if (c->pb == 0)
 			ft_init_stack_b(c);
 		if (ft_strcmp(c->command[i],"start") == 0)
 			i++;
@@ -55,11 +54,7 @@ void	ft_sort(t_cheker *c)
 		else if (ft_strcmp(c->command[i],"pa") == 0)
 			ft_do_pa(c, 1);
 		else if (ft_strcmp(c->command[i],"pb") == 0)
-		{
-			pb == 0 ? free(c->list_b) : pb;
-			pb++;
-			ft_do_pb(c,pb,1);
-		}
+			ft_do_pb(c ,1);
 		else if (ft_strcmp(c->command[i],"ra") == 0)
 			ft_do_ra(c, 1);
 		else if (ft_strcmp(c->command[i],"rb") == 0)
@@ -119,6 +114,9 @@ int		main(int ac, char **av)
 	t_cheker c;
 
 	ft_get_args(&c,av);
+	c.len = ft_get_len_ini(av);
+    c.len_b = 0;
+    c.pb = 0;
 	ft_checker(&c);
 
 	return 0;

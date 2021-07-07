@@ -1,7 +1,9 @@
 NAME = push_swap
 NAME_CHECKER = checker
+
 CC = gcc
 CFLAGS = 
+
 INC =-I./inc
 
 SRCS		=	./srcs/utils/ft_do_a.c \
@@ -21,8 +23,8 @@ CHECKER		=	./srcs/checker/checker.c
 
 
 
-SRCS_PUSH		=		$(PUSH)
-SRCS_CHECKER	=		$(CHECKER)
+SRCS_PUSH		=	$(PUSH)
+SRCS_CHECKER	=	$(CHECKER)
 
 OBJ=$(SRCS:.c=.o)
 OBJ_PUSH=$(SRCS_PUSH:.c=.o)
@@ -50,7 +52,10 @@ $(NAME_CHECKER): $(OBJ) $(OBJ_CHECKER)
 	@echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	@echo "\033[1;32m| \033[1;33m" $(NAME_CHECKER) : Created ! "\033[1;32m|"
 	@echo "\033[1;32m~~~~~~~~~~~~~~~~~~~~~~~~~~"
-
+test:
+	@make re --no-print-directory
+	@make bonus --no-print-directory
+	@make clean --no-print-directory
 clean:
 	@rm -f $(OBJ) $(OBJ_PUSH) $(OBJ_CHECKER)
 	@echo "\033[1;33mMake clean \033[1;32m [OK]"

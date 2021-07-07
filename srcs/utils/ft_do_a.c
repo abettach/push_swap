@@ -58,6 +58,8 @@ void    ft_do_pa(t_cheker *c, int cheker)
     int j = 1;
     int *list;
 
+    c->len++;
+    c->len_b--;
     while (c->list_a[i])
         i++;
     list = malloc(sizeof(int) * (i + 2));
