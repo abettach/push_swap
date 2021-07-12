@@ -81,27 +81,18 @@ void	ft_sort(t_cheker *c)
 
 void	ft_checker(t_cheker *c)
 {
-	int r = 0;
-	int  i = 0;
-	if (ft_double_check(c) == 1)
-	{
-		//ft_error("Error\n");
-		return ;
-	}
-	c->command = malloc(sizeof(char *) * 2);
+	c->command = malloc(sizeof(char *) * 1);
 	c->command[0] = ft_strdup("start");
 	c->command[1] = NULL;
 	while (1)
 	{
-		r = get_next_line(0,&c->tab);
+		get_next_line(0,&c->tab);
 		if (ft_strcmp(c->tab,"\0") == 0)
 			break;
 		ft_strjoin_command(c,c->tab);
 		free(c->tab);
-		i++;
 	}
 	ft_sort(c);
-
 	if (ft_check_sort(c) == 0)
 		ft_putstr_fd("KO\n",1);
 	else
@@ -114,7 +105,9 @@ int		main(int ac, char **av)
 	t_cheker c;
 
 	ft_get_args(&c,av);
+    c.len_ini = ft_get_len_ini(av);
 	c.len = ft_get_len_ini(av);
+	c.list_b = malloc(sizeof(int) * (c.len_ini + 1));
     c.len_b = 0;
     c.pb = 0;
 	ft_checker(&c);

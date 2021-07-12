@@ -24,11 +24,7 @@ void	ft_get_args(t_cheker *c, char **av)
 {
 	int i = 1;
 
-	while (av[i])
-		i++;
-	i--;
-	c->list_a = malloc(sizeof(int) * (i + 1+ 1));
-	i =  1;
+	i = 1;
 	int j = 0;
 	while (av[i] != NULL)
 	{
@@ -36,6 +32,7 @@ void	ft_get_args(t_cheker *c, char **av)
 		i++;
 		j++;
 	}
+	c->list_a[j] = '\0';
 }
 
 void			ft_putchar(char c)

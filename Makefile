@@ -12,12 +12,14 @@ SRCS		=	./srcs/utils/ft_do_a.c \
 				./srcs/utils/get_next_line.c \
 				./srcs/utils/get_next_line_utils.c \
 				./srcs/utils/print_stack.c \
-				./srcs/utils/utils.c
+				./srcs/utils/utils.c \
+				./srcs/utils/ft_splite.c
 
 PUSH		= 	./srcs/push_swap/ft_sort_3numbers.c \
 				./srcs/push_swap/ft_sort_5numbers.c \
 				./srcs/push_swap/push_swap.c \
 				./srcs/push_swap/ft_sort_more.c 
+
 
 CHECKER		=	./srcs/checker/checker.c
 

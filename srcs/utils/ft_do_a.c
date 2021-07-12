@@ -31,23 +31,25 @@ void    ft_do_ra(t_cheker *c, int cheker)
 void    ft_do_rra(t_cheker *c, int cheker)
 {
     int *list;
-    int i  = 0;
     int j = 1;
 
-    while (c->list_a[i])
-        i++;
-    list = malloc(sizeof(int) * (i + 1));
-    list[0] = c->list_a[i - 1];
-    i = 0;
-    while (c->list_a[i + 1])
+    list = malloc(sizeof(int) * (c->len + 1));
+    list[0] = c->list_a[c->len - 1];
+    int i  = 0;
+    while (i < c->len - 1)
     {
         list[j] = c->list_a[i];
         j++;
         i++;
     }
     list[j] = '\0';
-    free(c->list_a);
-    c->list_a = list;
+    i = 0;
+    while (i < c->len)
+    {
+        c->list_a[i] = list[i];
+        i++;
+    }
+    c->list_a[i] = '\0';
     if (cheker == 0)
         ft_putstr_fd("rra\n",1);
 }
@@ -62,19 +64,28 @@ void    ft_do_pa(t_cheker *c, int cheker)
     c->len_b--;
     while (c->list_a[i])
         i++;
-    list = malloc(sizeof(int) * (i + 2));
-    list[0] = c->list_b[0];
+    list = malloc(sizeof(int) * (c->len + 1));
     i = 0;
-    while (c->list_a[i])
+    while (i < c->len - 1)
     {
-        list[j] = c->list_a[i];
+        list[i] = c->list_a[i];
+        i++;
+    }
+    list[j] = '\0';
+    i = 0;
+    j = 1;
+    c->list_a[0] = c->list_b[0];
+    while (j < c->len)
+    {
+        c->list_a[j] = list[i];
         i++;
         j++;
     }
-    list[j] = '\0';
-    c->list_a = list;
+    c->list_a[j] = '\0';
+
+    free(list);
     i = 0;
-    while (c->list_b[i + 1])
+    while (i < c->len_b)
     {
         c->list_b[i] = c->list_b[i + 1];
         i++;

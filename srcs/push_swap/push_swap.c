@@ -4,18 +4,25 @@ void    ft_sort_table(t_cheker *c)
 {
     int tmp;
     int i;
-    i = 0;
-    while (c->new_tab[i] && i < c->len)
+    int j = 0;
+        i = 0;
+
+    while (i < c->len - 1)
     {
-        if (c->new_tab[i] > c->new_tab[i + 1])
+        j = 0;
+        while (j < c->len - 1)
         {
-            tmp = c->new_tab[i];
-            c->new_tab[i] = c->new_tab[i + 1];
-            c->new_tab[i + 1] = tmp;
-            i = 0;
+            if (c->new_tab[j] > c->new_tab[j + 1])
+            {
+                tmp = c->new_tab[j];
+                c->new_tab[j] = c->new_tab[j + 1];
+                c->new_tab[j + 1] = tmp;
+                i = 0;
+                break;
+            }
+            j++;
         }
-       else
-            i++;
+        i++;
     }
 }
 
@@ -29,6 +36,7 @@ void    ft_copy_stack(t_cheker *c)
         c->new_tab[i] = c->list_a[i];
         i++;
     }
+    c->new_tab[i] = '\0';
 }
 
 int		ft_double_check2(t_cheker *c)
@@ -51,12 +59,11 @@ int		ft_double_check2(t_cheker *c)
 
 void    ft_push_swap(t_cheker *c)
 {
-    if (ft_double_check2(c) == 1)
-	{
-		ft_error("Error\n");
-		return  ;
-	}
-    ft_copy_stack(c);
+    // if (ft_double_check2(c) == 1)
+	// {
+	// 	ft_error("Error\n");
+	// 	return  ;
+	// }
     ft_sort_table(c);
     if (c->len < 2)
         return ;
@@ -74,7 +81,7 @@ void    ft_push_swap(t_cheker *c)
         if (c->len <= 100)
             ft_sort_more(c, 5, c->len / 5);
         else if (c->len > 100 && c->len <= 500)
-            ft_sort_more(c, 11, c->len / 11);
+            ft_sort_more(c, 13, c->len / 13);
     }
 }
 
@@ -82,8 +89,11 @@ int     main(int ac, char **av)
 {
     	t_cheker c;
 
+    c.len_ini = ft_get_len_ini(av);
+    c.list_a = malloc(sizeof(int) * (c.len_ini + 1));
 	ft_get_args(&c,av);
     c.len = ft_get_len_ini(av);
+    c.list_b = malloc(sizeof(int) * (c.len_ini + 1));
     c.len_b = 0;
     c.pb = 0;
 	ft_push_swap(&c);

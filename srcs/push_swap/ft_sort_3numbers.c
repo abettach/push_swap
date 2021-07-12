@@ -12,6 +12,7 @@ int     ft_get_case(t_cheker *c)
         return 4;
     if (c->list_a[0] < c->list_a[1] && c->list_a[1] > c->list_a[2] && c->list_a[2] < c->list_a[0])
         return 5;
+    return 0;
 }
 void    ft_sort_3numbers(t_cheker *c)
 {

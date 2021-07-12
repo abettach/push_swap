@@ -16,6 +16,7 @@ typedef struct s_cheker
     int      *list_a;
     int      *list_b;
     int     len;
+    int     len_ini;
     int     *new_tab;
     char    **swap_command;
     int     len_b;

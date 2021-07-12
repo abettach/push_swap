@@ -11,52 +11,38 @@ void    ft_do_pb(t_cheker *c, int cheker)
     c->len--;
 	c->len_b++;
     c->pb++;
+
     if (c->pb == 1)
     {
-        c->list_b = malloc(sizeof(int) * (c->pb + 1));
         c->list_b[0] = c->list_a[0];
         c->list_b[1] = '\0';
-        while (c->list_a[i + 1])
-        {
-            c->list_a[i] = c->list_a[i + 1];
-            i++;
-        }
-        c->list_a[i] = '\0';
     }
-    else if (c->pb > 1)
+    if (c->pb > 1)
     {
-        while (c->list_b[i])
-            i++;
-        index = i;
-        tmp = malloc(sizeof(int) * (i + 1));
-        i = 0;
-        while (c->list_b[i])
+        tmp = malloc(sizeof(int) * (c->len_b + 1));
+        while (i < c->len_b - 1)
         {
             tmp[i] = c->list_b[i];
             i++;
         }
         tmp[i] = '\0';
-        i = 0;
-        free(c->list_b);
-        c->list_b = (int *)malloc(sizeof(int) * (index + 2));
         c->list_b[0] = c->list_a[0];
         i = 1;
-        j = 0;
-        while (tmp[j])
+        while (i < c->len_b)
         {
             c->list_b[i] = tmp[j];
             i++;
             j++;
         }
-        c->list_b[i] = '\0'; 
-        i = 0;
-        while (c->list_a[i + 1])
-        {
-            c->list_a[i] = c->list_a[i + 1];
-            i++;
-        }
-        c->list_a[i] = '\0'; 
+        c->list_b[i] = '\0';
     }
+    i = 0;
+    while (i < c->len)
+    {
+        c->list_a[i] = c->list_a[i + 1];
+        i++;
+    }
+    c->list_a[i] = '\0';
     if (cheker == 0)
         ft_putstr_fd("pb\n",1);
 }

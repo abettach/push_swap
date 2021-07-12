@@ -8,13 +8,17 @@ int	get_scan_top(t_cheker *c, int chunk_size)
 
 	moves = 0;
 	i = 0;
+
 	while (i < c->len)
 	{
 		indice = 0;
 		while (indice < chunk_size)
 		{
 			if (c->list_a[i] == c->new_tab[indice])
+			{
+				// printf("tab = %d,c->list_a = %d\n",c->new_tab[indice],c->list_a[i]);
 				return (moves);
+			}
 			indice++;
 		}
 		i++;
@@ -52,7 +56,9 @@ void	push_a_to_b(t_cheker *c, int chunk_size)
 	int	move_end;
 
 	move_top = get_scan_top(c, chunk_size);
+	printf("top = %d\n",move_top);
 	move_end = get_scan_end(c, chunk_size);
+	printf("end = %d\n",move_end);
 	if (move_top <= move_end)
 	{
 		while (move_top-- > 0)
@@ -71,19 +77,14 @@ int	get_big_nbr(t_cheker *c)
 {
 	int	*tmp;
 	int		ret;
-	tmp = malloc(sizeof(int) * (c->len_b + 1));
-	int i= 1;
+	int i = 0;
+
+	//print_stack_b(c);
+	ret = c->list_b[0];
 	while (i < c->len_b)
 	{
-		tmp[i] = c->list_b[i];
-		i++;
-	}
-	ret = c->list_b[0];
-	i = 0;
-	while (tmp[i])
-	{
-		if (tmp[i] > ret)
-			ret = tmp[i];
+		if (c->list_b[i] > ret)
+			ret = c->list_b[i];
 		i++;
 	}
 	return (ret);
@@ -114,12 +115,12 @@ void	last_sort(t_cheker *c, int pos_num, int midle_stack)
 	stack_lengt = c->len_b;
 	while (i < stack_lengt)
 	{
-		midle_stack = stack_lengt / 2;
+		midle_stack = c->len_b / 2;
 		big_nbr = get_big_nbr(c);
 		pos_num = get_big_nbr_pos(c, big_nbr);
-				printf("midl = %d.",midle_stack);
-				printf("big = %d.",big_nbr);
-				printf("pos = %d\n",pos_num);
+				// printf("midl = %d.",midle_stack);
+				// printf("big = %d.",big_nbr);
+				// printf("pos = %d\n",pos_num);
 		if (pos_num <= midle_stack)
 		{
 			while (pos_num-- > 0)
@@ -146,11 +147,12 @@ void	solution_for_more_2(t_cheker *c)
 		if (c->list_a[0] > c->list_a[1])
 			ft_do_sa(c, 0);
 	}
-	while (i <= c->len)
+	while (i < c->len)
 	{
 		ft_do_pb(c, 0);
 		i++;
 	}
+	//print_stack_b(c);
 	last_sort(c, 0, 0);
 }
 
