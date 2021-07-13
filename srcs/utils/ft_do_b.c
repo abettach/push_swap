@@ -92,7 +92,7 @@ void    ft_do_rrb(t_cheker *c, int cheker)
         i++;
     }
     list[j] = '\0';
-    free(c->list_b);
+    // free(c->list_b);
     c->list_b = list;
     if (cheker == 0)
         ft_putstr_fd("rrb\n",1);

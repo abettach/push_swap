@@ -17,6 +17,7 @@ typedef struct s_cheker
     int      *list_b;
     int     len;
     int     len_ini;
+    char    **new_av;
     int     *new_tab;
     char    **swap_command;
     int     len_b;
@@ -46,13 +47,16 @@ void    print_stack_a(t_cheker *c);
 void    print_stack_b(t_cheker *c);
 int		ft_double_check(t_cheker *c);
 int     ft_get_len_ini(char **av);
+char	*ft_strchr(const char *s, int c);
+char	**ft_split(const char *s, char c);
+void    ft_copy_args_to_stack(t_cheker *c);
 
 //checker 
 void	ft_checker(t_cheker *c);
-void	ft_get_args(t_cheker *c, char **av);
+void	ft_get_corr_args(t_cheker *c, char **av);
 //push_swap
 int     ft_get_len(int  *stack_a);
-void    ft_copy_stack(t_cheker *c);
+void    ft_copy_stack_to_tab(t_cheker *c);
 void    ft_sort_table(t_cheker *c);
 int     ft_get_case(t_cheker *c);
 void    ft_sort_3numbers(t_cheker *c);

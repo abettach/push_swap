@@ -1,5 +1,38 @@
 #include "../inc/push_swap.h"
 
+void    ft_copy_args_to_stack(t_cheker *c)
+{
+    int i = 0;
+
+    while (c->new_av[i])
+    {
+        c->list_a[i] = ft_atoi(c->new_av[i]);
+        i++;
+    }
+    c->list_a[i] = '\0';
+
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	char	c3;
+	char	*str;
+	int		i;
+
+	c3 = (char)c;
+	str = (char *)s;
+	i = 0;
+	if (c3 == '\0')
+		return (str + ft_strlen(str));
+	while (str[i])
+	{
+		if (str[i] == c3)
+			return (str + i);
+		i++;
+	}
+	return (NULL);
+}
+
 int     ft_get_len_ini(char **av)
 {
     int i = 1;
@@ -20,19 +53,89 @@ int     ft_get_len(int  *stack_a)
     return i;
 }
 
-void	ft_get_args(t_cheker *c, char **av)
+int	get_spaces(char *str, int ret)
 {
-	int i = 1;
+	int		i;
+	char	**split;
+
+	i = 0;
+	split = ft_split(str, ' ');
+	while (split && split[i])
+	{
+		ret++;
+		i++;
+	}
+	//ft_free_2(split);
+	return (ret);
+}
+
+int	get_corr_len(t_cheker *c, char **av)
+{
+	int	i;
+	int	j;
+	int	ret;
 
 	i = 1;
-	int j = 0;
-	while (av[i] != NULL)
+	j = 0;
+	ret = 0;
+	while (av[i])
 	{
-		c->list_a[j] = ft_atoi(av[i]);
+		if (av[i][0] != '\0')
+		{
+			j = 0;
+			if (ft_strchr(av[i], ' ') != NULL)
+				ret = get_spaces(av[i], ret);
+			else
+				ret++;
+		}
 		i++;
-		j++;
 	}
-	c->list_a[j] = '\0';
+	return (ret);
+}
+
+void	get_btween_quots(t_cheker *c, char **av, int i, int *j)
+{
+	char	**split;
+	int		k;
+
+	k = 0;
+	split = ft_split(av[i], ' ');
+	while (split[k])
+	{
+		c->new_av[*j] = ft_strdup(split[k]);
+		k++;
+		*j = *j + 1;
+	}
+	//ft_free_2(split);
+}
+
+void	ft_get_corr_args(t_cheker *c, char **av)
+{
+	int	i;
+	int	lengt;
+	int	j;
+
+	j = 0;
+	i = 1;
+	lengt = get_corr_len(c,av);
+	c->len_ini = lengt;
+	c->new_av = (char **)malloc(sizeof(char *) * (lengt + 1));
+	while (av[i])
+	{
+		if (av[i][0])
+		{
+			if (ft_strchr(av[i], ' ') != NULL)
+			{
+				get_btween_quots(c, av, i, &j);
+				i++;
+			}
+			else
+				c->new_av[j++] = ft_strdup(av[i++]);
+		}
+		else
+			i++;
+	}
+	c->new_av[j] = NULL;
 }
 
 void			ft_putchar(char c)
@@ -192,19 +295,6 @@ char		*ft_strdup(const char *s1)
 	return (str);
 }
 
-char		*ft_strchr(const char *s, int c)
-{
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		++s;
-	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
-}
-
 void    ft_strjoin_command(t_cheker *c, char *arg)
 {
     int i = 0;
@@ -223,14 +313,14 @@ void    ft_strjoin_command(t_cheker *c, char *arg)
 	i++;
     tab[i] = NULL;
     i = 0;
-    while (c->command[i])
-    {
-        free(c->command[i]);
-        c->command[i] = NULL;
-        i++;
-    }
-    if (c->command)
-        free(c->command);
+    // while (c->command[i])
+    // {
+    //     free(c->command[i]);
+    //     c->command[i] = NULL;
+    //     i++;
+    // }
+    // if (c->command)
+    //     free(c->command);
     i = 0;
     while (tab[i])
         i++;
@@ -242,13 +332,13 @@ void    ft_strjoin_command(t_cheker *c, char *arg)
         i++;
     }
     c->command[i] = NULL;
-    i = 0;
-     while (tab[i])
-    {
-        free(tab[i]);
-        tab[i] = NULL;
-        i++;
-    }
-    if (tab)
-        free(tab);
+    // i = 0;
+    //  while (tab[i])
+    // {
+    //     free(tab[i]);
+    //     tab[i] = NULL;
+    //     i++;
+    // }
+    // if (tab)
+    //     free(tab);
 }

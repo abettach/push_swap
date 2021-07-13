@@ -26,11 +26,11 @@ void    ft_sort_table(t_cheker *c)
     }
 }
 
-void    ft_copy_stack(t_cheker *c)
+void    ft_copy_stack_to_tab(t_cheker *c)
 {
     int i = 0;
 
-    c->new_tab = malloc(sizeof(int) * (c->len));
+    c->new_tab = malloc(sizeof(int) * (c->len + 1));
     while (i < c->len)
     {
         c->new_tab[i] = c->list_a[i];
@@ -65,6 +65,7 @@ void    ft_push_swap(t_cheker *c)
 	// 	return  ;
 	// }
     ft_sort_table(c);
+
     if (c->len < 2)
         return ;
     if (c->len == 2)
@@ -89,14 +90,17 @@ int     main(int ac, char **av)
 {
     	t_cheker c;
 
-    c.len_ini = ft_get_len_ini(av);
+	ft_get_corr_args(&c,av);
     c.list_a = malloc(sizeof(int) * (c.len_ini + 1));
-	ft_get_args(&c,av);
-    c.len = ft_get_len_ini(av);
     c.list_b = malloc(sizeof(int) * (c.len_ini + 1));
+	ft_copy_args_to_stack(&c);
+    c.len = c.len_ini;
+    // printf("len = %d\n",c.len);
+    ft_copy_stack_to_tab(&c);
     c.len_b = 0;
     c.pb = 0;
 	ft_push_swap(&c);
+    //print_stack_b(&c);
 
 	return 0;
 }

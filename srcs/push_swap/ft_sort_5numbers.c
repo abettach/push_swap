@@ -6,11 +6,11 @@ void    ft_sort_5numbers(t_cheker *c)
     int i = 0;
     int j = 0;
     int len;
-    median_stack = c->new_tab[c->len / 2];
-    if (c->new_tab)
-        free(c->new_tab);
-    ft_copy_stack(c);
-    while (i < c->len)
+    median_stack = c->new_tab[c->len_ini / 2];
+    // if (c->new_tab)
+    //     free(c->new_tab);
+    ft_copy_stack_to_tab(c);
+    while (i < c->len_ini)
     {
         if (c->new_tab[i] < median_stack)
             ft_do_pb(c,0);
@@ -18,7 +18,7 @@ void    ft_sort_5numbers(t_cheker *c)
             ft_do_ra(c, 0);
         i++;
     }
-    len = ft_get_len(c->list_a);
+    len = c->len;
     if (len == 2)
     {
         if (c->list_a[0] > c->list_a[1])

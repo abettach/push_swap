@@ -56,9 +56,9 @@ void	push_a_to_b(t_cheker *c, int chunk_size)
 	int	move_end;
 
 	move_top = get_scan_top(c, chunk_size);
-	printf("top = %d\n",move_top);
+	// printf("top = %d\n",move_top);
 	move_end = get_scan_end(c, chunk_size);
-	printf("end = %d\n",move_end);
+	// printf("end = %d\n",move_end);
 	if (move_top <= move_end)
 	{
 		while (move_top-- > 0)
@@ -79,7 +79,7 @@ int	get_big_nbr(t_cheker *c)
 	int		ret;
 	int i = 0;
 
-	//print_stack_b(c);
+	// print_stack_b(c);
 	ret = c->list_b[0];
 	while (i < c->len_b)
 	{
@@ -118,7 +118,7 @@ void	last_sort(t_cheker *c, int pos_num, int midle_stack)
 		midle_stack = c->len_b / 2;
 		big_nbr = get_big_nbr(c);
 		pos_num = get_big_nbr_pos(c, big_nbr);
-				// printf("midl = %d.",midle_stack);
+				// printf("midl = %d.len = %d,",midle_stack,stack_lengt);
 				// printf("big = %d.",big_nbr);
 				// printf("pos = %d\n",pos_num);
 		if (pos_num <= midle_stack)
@@ -140,6 +140,7 @@ void	last_sort(t_cheker *c, int pos_num, int midle_stack)
 void	solution_for_more_2(t_cheker *c)
 {
 	int i = 0;
+
 	if (c->len == 3)
 		ft_sort_3numbers(c);
  	else if (c->len == 2)
@@ -147,7 +148,7 @@ void	solution_for_more_2(t_cheker *c)
 		if (c->list_a[0] > c->list_a[1])
 			ft_do_sa(c, 0);
 	}
-	while (i < c->len)
+	while (c->len)
 	{
 		ft_do_pb(c, 0);
 		i++;

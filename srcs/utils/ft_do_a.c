@@ -18,7 +18,7 @@ void    ft_do_ra(t_cheker *c, int cheker)
     int i  = 0;
 
     tmp = c->list_a[0];
-    while (c->list_a[i + 1])
+    while (i < c->len - 1)
     {
         c->list_a[i] = c->list_a[i+1];
         i++;
@@ -62,28 +62,25 @@ void    ft_do_pa(t_cheker *c, int cheker)
 
     c->len++;
     c->len_b--;
-    while (c->list_a[i])
-        i++;
     list = malloc(sizeof(int) * (c->len + 1));
     i = 0;
-    while (i < c->len - 1)
+    j = 0;
+    list[j] = c->list_b[0];
+    j++;
+    while (i < c->len)
     {
-        list[i] = c->list_a[i];
-        i++;
-    }
-    list[j] = '\0';
-    i = 0;
-    j = 1;
-    c->list_a[0] = c->list_b[0];
-    while (j < c->len)
-    {
-        c->list_a[j] = list[i];
+        list[j] = c->list_a[i];
         i++;
         j++;
     }
-    c->list_a[j] = '\0';
-
-    free(list);
+    list[j] = '\0';
+    i = 0;
+    while (i < c->len)
+    {
+        c->list_a[i] = list[i];
+        i++;
+    }
+    c->list_a[i] = '\0';
     i = 0;
     while (i < c->len_b)
     {
