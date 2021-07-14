@@ -48,7 +48,7 @@ $(NAME): $(OBJ) $(OBJ_PUSH)
 bonus:
 	@$(MAKE) $(NAME_CHECKER) --no-print-directory
 
-$(NAME_CHECKER): $(OBJ) $(OBJ_CHECKER)
+$(NAME_CHECKER): $(OBJ) $(OBJ_CHECKER) $(OBJ_PUSH)
 	@$(CC) $(CFLAGS) $(INC) $(OBJ) $(OBJ_CHECKER) -o $(NAME_CHECKER)
 	@echo "\033[1;33mMake \033[1;32m\t    [OK]"
 	@echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"

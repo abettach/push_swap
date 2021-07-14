@@ -94,12 +94,12 @@ int     main(int ac, char **av)
     c.list_a = malloc(sizeof(int) * (c.len_ini + 1));
     c.list_b = malloc(sizeof(int) * (c.len_ini + 1));
 	ft_copy_args_to_stack(&c);
-    c.len = c.len_ini;
-    // printf("len = %d\n",c.len);
-    ft_copy_stack_to_tab(&c);
-    c.len_b = 0;
-    c.pb = 0;
-	ft_push_swap(&c);
+        c.len = c.len_ini;
+        // printf("len = %d\n",c.len);
+        ft_copy_stack_to_tab(&c);
+        c.len_b = 0;
+        c.pb = 0;
+        ft_push_swap(&c);
     //print_stack_b(&c);
 
 	return 0;

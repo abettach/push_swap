@@ -24,6 +24,7 @@ void    ft_do_ra(t_cheker *c, int cheker)
         i++;
     }
     c->list_a[i] = tmp;
+    c->list_a[++i] = '\0';
     if (cheker == 0)
         ft_putstr_fd("ra\n",1);
 }
@@ -62,6 +63,7 @@ void    ft_do_pa(t_cheker *c, int cheker)
 
     c->len++;
     c->len_b--;
+    c->pb--;
     list = malloc(sizeof(int) * (c->len + 1));
     i = 0;
     j = 0;

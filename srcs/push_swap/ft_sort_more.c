@@ -118,13 +118,16 @@ void	last_sort(t_cheker *c, int pos_num, int midle_stack)
 		midle_stack = c->len_b / 2;
 		big_nbr = get_big_nbr(c);
 		pos_num = get_big_nbr_pos(c, big_nbr);
-				// printf("midl = %d.len = %d,",midle_stack,stack_lengt);
+				// printf("midl = %d.",midle_stack);
 				// printf("big = %d.",big_nbr);
 				// printf("pos = %d\n",pos_num);
 		if (pos_num <= midle_stack)
 		{
-			while (pos_num-- > 0)
+			while (pos_num > 0)
+			{
 				ft_do_rb(c, 0);
+				pos_num--;
+			}
 			ft_do_pa(c, 0);
 		}
 		else

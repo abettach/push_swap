@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
+/*   By: isel-jao <isel-jao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/01 14:38:49 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/14 12:35:21 by abettach         ###   ########.fr       */
+/*   Created: 2021/03/17 15:04:07 by isel-jao          #+#    #+#             */
+/*   Updated: 2021/05/27 21:26:16 by isel-jao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "libft.h"
 
 static int	ft_rmp(char **new, int n, char **line, int fd)
 {
@@ -69,4 +69,3 @@ int	get_next_line(int fd, char **line)
 	free(buf);
 	return (ft_rmp(oldline, n, line, fd));
 }
-

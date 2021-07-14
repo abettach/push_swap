@@ -18,73 +18,56 @@ int		ft_double_check(t_cheker *c)
 	return 0;
 }
 
-int	ft_check_sort(t_cheker *c)
-{
-	int i = 0;
-	int j = 0;
 
-	while (i < c->len - 1)
-	{
-		if (c->list_a[i] > c->list_a[i + 1])
-			return 0;
-		else
-			i++;
-	}
-	return 1;
-}
 
 void	ft_sort(t_cheker *c, char *arg)
 {
-	int i = 0;
-
-	// if (c->pb == 0)
-	// 	ft_init_stack_b(c);
-	if (ft_strcmp(arg,"sa") == 0)
+	static int p = 0;
+	// printf("%d\n",++p);
+		printf("->%s\n",arg);
+	if (strcmp(arg,"sa") == 0)
 		ft_do_sa(c, 1);
-	else if (ft_strcmp(arg,"sb") == 0)
+	else if (strcmp(arg,"sb") == 0)
 		ft_do_sb(c, 1);
-	else if (ft_strcmp(arg,"ss") == 0)
-	{
-		ft_do_sa(c, 1);
-		ft_do_sb(c, 1);
-	}
-	else if (ft_strcmp(arg,"pa") == 0)
+	else if (strcmp(arg,"pa") == 0)
 		ft_do_pa(c, 1);
-	else if (ft_strcmp(arg,"pb") == 0)
+	else if (strcmp(arg,"pb") == 0)
 		ft_do_pb(c ,1);
-	else if (ft_strcmp(arg,"ra") == 0)
+	else if (strcmp(arg,"ra") == 0)
 		ft_do_ra(c, 1);
-	else if (ft_strcmp(arg,"rb") == 0)
+	else if (strcmp(arg,"rb") == 0)
 		ft_do_rb(c, 1);
-	else if (ft_strcmp(arg,"rr") == 0)
-	{
-		ft_do_ra(c, 1);
-		ft_do_rb(c, 1);
-	}
-	else if (ft_strcmp(arg,"rra") == 0)
+	else if (strcmp(arg,"rra") == 0)
 		ft_do_rra(c, 1);
-	else if (ft_strcmp(arg,"rrb") == 0)
+	else if (strcmp(arg,"rrb") == 0)
 		ft_do_rrb(c, 1);
-	else if (ft_strcmp(arg,"rrr") == 0)
-	{
-		ft_do_rra(c, 1);
-		ft_do_rrb(c, 1);
-	}
 }
 
 void	ft_checker(t_cheker *c)
 {
-	char *arg;
-	char *tmp;
-	while (1)
+	char *arg = NULL;
+
+	while (get_next_line(0,&arg))
 	{
-		get_next_line(0,&arg);
-		if (ft_strcmp(arg,"\0") == 0)
-			break;
-		// puts(arg);
-		ft_sort(c,arg);
-		// free(arg);
+		if (strcmp(arg,"sa") == 0)
+			ft_do_sa(c, 1);
+		else if (strcmp(arg,"sb") == 0)
+			ft_do_sb(c, 1);
+		else if (strcmp(arg,"pa") == 0)
+			ft_do_pa(c, 1);
+		else if (strcmp(arg,"pb") == 0)
+			ft_do_pb(c ,1);
+		else if (strcmp(arg,"ra") == 0)
+			ft_do_ra(c, 1);
+		else if (strcmp(arg,"rb") == 0)
+			ft_do_rb(c, 1);
+		else if (strcmp(arg,"rra") == 0)
+			ft_do_rra(c, 1);
+		else if (strcmp(arg,"rrb") == 0)
+			ft_do_rrb(c, 1);
+		free(arg);
 	}
+	// print_stack_a(c);
 	if (ft_check_sort(c) == 0)
 		ft_putstr_fd("KO\n",1);
 	else if (ft_check_sort(c) == 1)

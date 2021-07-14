@@ -20,6 +20,7 @@ typedef struct s_cheker
     char    **new_av;
     int     *new_tab;
     char    **swap_command;
+    char    *line;
     int     len_b;
     int     pb;
 }   t_cheker;
@@ -30,7 +31,11 @@ char	*ft_strdup(const char *s1);
 int	    ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
-
+void		get_input(t_cheker *m, int i, int b, int len);
+void		ft_bzero(void *s, size_t n);
+char		*clean_join(char *s1, char *s2);
+char		*ft_chr(const char *s, int c);
+int	ft_check_sort(t_cheker *c);
 //Utils
 void		ft_putchar(char c);
 void		ft_putstr(char *str);
@@ -50,7 +55,7 @@ int     ft_get_len_ini(char **av);
 char	*ft_strchr(const char *s, int c);
 char	**ft_split(const char *s, char c);
 void    ft_copy_args_to_stack(t_cheker *c);
-
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 //checker 
 void	ft_checker(t_cheker *c);
 void	ft_get_corr_args(t_cheker *c, char **av);

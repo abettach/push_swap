@@ -1,5 +1,44 @@
 #include "../inc/push_swap.h"
 
+int	ft_check_sort(t_cheker *c)
+{
+	int i = 0;
+	int j = 0;
+
+	while (i < c->len - 1)
+	{
+		if (c->list_a[i] > c->list_a[i + 1])
+			return 0;
+		else
+			i++;
+	}
+	return 1;
+}
+
+char		*clean_join(char *s1, char *s2)
+{
+	char	*tmp;
+
+	tmp = s1;
+	s1 = ft_strjoin(s1, s2);
+	free(tmp);
+	return (s1);
+}
+
+void		ft_bzero(void *s, size_t n)
+{
+	unsigned char	*d;
+	size_t			i;
+
+	d = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = 0;
+		i++;
+	}
+	return ;
+}
 void    ft_copy_args_to_stack(t_cheker *c)
 {
     int i = 0;
@@ -11,6 +50,26 @@ void    ft_copy_args_to_stack(t_cheker *c)
     }
     c->list_a[i] = '\0';
 
+}
+
+char		*ft_chr(const char *s, int c)
+{
+	char		c2;
+	char		*str;
+	int			i;
+
+	c2 = (char)c;
+	str = (char *)s;
+	i = 0;
+	if (c2 == '\0')
+		return (str + ft_strlen(str));
+	while (str[i])
+	{
+		if (str[i] == c2)
+			return (str + i);
+		i++;
+	}
+	return (NULL);
 }
 
 char	*ft_strchr(const char *s, int c)
