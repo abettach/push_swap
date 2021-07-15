@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/01 14:38:37 by abettach          #+#    #+#             */
-/*   Updated: 2021/03/26 15:36:35 by abettach         ###   ########.fr       */
+/*   Created: 2021/07/15 13:49:44 by abettach          #+#    #+#             */
+/*   Updated: 2021/07/15 13:49:45 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void    ft_free_all(t_cheker *c)
 {
-	size_t		i;
-	size_t		length;
-	char		*tab;
+    int i = -1;
 
-	i = 0;
-	if (!s)
-		return (0);
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	length = ft_strlen(&s[start]);
-	if (length >= len)
-		length = len;
-	tab = (char *)malloc((length + 1));
-	if (!tab)
-		return (0);
-	while (i < length && s[start] != '\0')
-		tab[i++] = s[start++];
-	tab[i] = '\0';
-	return (tab);
+    while (c->new_av[++i])
+        free(c->new_av[i]);
+    if (c->new_av)
+        free(c->new_av);
+    free(c->list_a);
+    free(c->list_b);
+    free(c->new_tab);
 }

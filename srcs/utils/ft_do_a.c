@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_do_a.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/15 13:36:59 by abettach          #+#    #+#             */
+/*   Updated: 2021/07/15 13:42:01 by abettach         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/push_swap.h"
 
-// reverse command[0] && command [1]
 void    ft_do_sa(t_cheker *c, int cheker)
 {
     int tmp;
@@ -11,7 +22,7 @@ void    ft_do_sa(t_cheker *c, int cheker)
     if (cheker == 0)
         ft_putstr_fd("sa\n",1);
 }
-//rotate a --> b 1 element exp 1 2 3 , ra = 2 3 1
+
 void    ft_do_ra(t_cheker *c, int cheker)
 {
     int tmp;
@@ -28,7 +39,7 @@ void    ft_do_ra(t_cheker *c, int cheker)
     if (cheker == 0)
         ft_putstr_fd("ra\n",1);
 }
-//rra , reverse ra, rotate a <-- by 1 element , expl 1 2 3 4 , rra 4 1 2 3
+
 void    ft_do_rra(t_cheker *c, int cheker)
 {
     int *list;
@@ -51,6 +62,8 @@ void    ft_do_rra(t_cheker *c, int cheker)
         i++;
     }
     c->list_a[i] = '\0';
+    free(list);
+    list = NULL;
     if (cheker == 0)
         ft_putstr_fd("rra\n",1);
 }
@@ -58,31 +71,19 @@ void    ft_do_rra(t_cheker *c, int cheker)
 void    ft_do_pa(t_cheker *c, int cheker)
 {
     int i = 0;
-    int j = 1;
     int *list;
 
     c->len++;
     c->len_b--;
     c->pb--;
-    list = malloc(sizeof(int) * (c->len + 1));
     i = 0;
-    j = 0;
-    list[j] = c->list_b[0];
-    j++;
-    while (i < c->len)
+    while (i < c->len - 1)
     {
-        list[j] = c->list_a[i];
-        i++;
-        j++;
-    }
-    list[j] = '\0';
-    i = 0;
-    while (i < c->len)
-    {
-        c->list_a[i] = list[i];
+        c->list_a[i+1] = c->list_a[i];
         i++;
     }
-    c->list_a[i] = '\0';
+    c->list_a[0] = c->list_b[0];
+    c->list_a[c->len] = '\0';
     i = 0;
     while (i < c->len_b)
     {

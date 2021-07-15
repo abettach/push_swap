@@ -8,17 +8,21 @@ INC =-I./inc
 
 SRCS		=	./srcs/utils/ft_do_a.c \
 				./srcs/utils/ft_do_b.c \
-				./srcs/utils/ft_error.c \
+				./srcs/utils/ft_do_b_2.c \
 				./srcs/utils/get_next_line.c \
-				./srcs/utils/get_next_line_utils.c \
-				./srcs/utils/print_stack.c \
 				./srcs/utils/utils.c \
-				./srcs/utils/ft_splite.c
+				./srcs/utils/utils_1.c \
+				./srcs/utils/utils_2.c \
+				./srcs/utils/utils_3.c \
+				./srcs/utils/ft_splite.c \
+				./srcs/utils/ft_free.c \
+				./srcs/utils/ft_errors.c
 
 PUSH		= 	./srcs/push_swap/ft_sort_3numbers.c \
 				./srcs/push_swap/ft_sort_5numbers.c \
 				./srcs/push_swap/push_swap.c \
-				./srcs/push_swap/ft_sort_more.c 
+				./srcs/push_swap/ft_sort_more.c \
+				./srcs/push_swap/ft_sort_more_2.c 
 
 
 CHECKER		=	./srcs/checker/checker.c
