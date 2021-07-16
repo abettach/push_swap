@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:29:44 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 13:45:30 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 14:06:04 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,13 @@ void	ft_checker(t_cheker *c)
 	arg = NULL;
 	while (get_next_line(0, &arg))
 	{
-		if (check_command(arg) == 1)
-			ft_sort_checker(c, arg);
-		else
+		if (check_command(arg) == -1)
 		{
 			write (2, "Error\n", 6);
 			free(arg);
 			exit(0);
 		}
+		ft_sort_checker(c, arg);
 		free(arg);
 	}
 	if (ft_check_sort(c) == 0)
