@@ -8,13 +8,11 @@ INC =-I./inc
 
 SRCS		=	./srcs/utils/ft_do_a.c \
 				./srcs/utils/ft_do_b.c \
-				./srcs/utils/ft_do_b_2.c \
 				./srcs/utils/get_next_line.c \
 				./srcs/utils/utils.c \
 				./srcs/utils/utils_1.c \
 				./srcs/utils/utils_2.c \
 				./srcs/utils/utils_3.c \
-				./srcs/utils/utils_4.c \
 				./srcs/utils/ft_splite.c \
 				./srcs/utils/ft_errors.c
 
