@@ -14,8 +14,8 @@ SRCS		=	./srcs/utils/ft_do_a.c \
 				./srcs/utils/utils_1.c \
 				./srcs/utils/utils_2.c \
 				./srcs/utils/utils_3.c \
+				./srcs/utils/utils_4.c \
 				./srcs/utils/ft_splite.c \
-				./srcs/utils/ft_free.c \
 				./srcs/utils/ft_errors.c
 
 PUSH		= 	./srcs/push_swap/ft_sort_3numbers.c \

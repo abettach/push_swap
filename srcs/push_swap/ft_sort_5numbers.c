@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:25 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/15 14:28:37 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 11:27:33 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_sort_5numbers(t_cheker *c)
 	median_stack = c->new_tab[c->len_ini / 2];
 	free(c->new_tab);
 	c->new_tab = NULL;
-	ft_copy_stack_to_tab(c);
+	ft_copy_stack_to_tab(c, 0);
 	while (i < c->len_ini)
 	{
 		if (c->new_tab[i] < median_stack)

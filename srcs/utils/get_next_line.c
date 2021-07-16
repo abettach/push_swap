@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 14:38:49 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/15 13:59:49 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 10:00:22 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,3 @@ int	get_next_line(int fd, char **line)
 	free(buf);
 	return (ft_rmp(oldline, n, line, fd));
 }
-

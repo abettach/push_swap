@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:11 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/15 14:22:16 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 11:18:03 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_chr(const char *s, int c);
 int		ft_check_sort(t_cheker *c);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, t_cheker *c);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strlen(const char *s);
@@ -67,13 +67,13 @@ char	*ft_strchr(const char *s, int c);
 char	**ft_split(const char *s, char c);
 void	ft_copy_args_to_stack(t_cheker *c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	ft_free_all(t_cheker *c);
+void	ft_free_all(t_cheker *c, int before);
 int		ft_check_error(t_cheker *c);
 void	ft_checker(t_cheker *c);
 char	*ft_strtrim(char *s1, char set);
 void	ft_get_corr_args(t_cheker *c, char **av);
 int		ft_get_len(int *stack_a);
-void	ft_copy_stack_to_tab(t_cheker *c);
+void	ft_copy_stack_to_tab(t_cheker *c, int checker);
 void	ft_sort_table(t_cheker *c);
 int		ft_get_case(t_cheker *c);
 void	ft_sort_3numbers(t_cheker *c);
@@ -89,5 +89,6 @@ void	ft_do_sb(t_cheker *c, int cheker);
 void	ft_do_rb(t_cheker *c, int cheker);
 void	ft_do_rrb(t_cheker *c, int cheker);
 void	ft_init_stack_b(t_cheker *c);
+void	ft_sort_table(t_cheker *c);
 
 #endif

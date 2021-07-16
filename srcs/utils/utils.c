@@ -6,11 +6,26 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:10:04 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/15 14:10:05 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 10:38:33 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+void	ft_free_all(t_cheker *c, int before)
+{
+	int		i;
+
+	i = -1;
+	while (c->new_av[++i])
+		free(c->new_av[i]);
+	if (c->new_av)
+		free(c->new_av);
+	free(c->list_a);
+	free(c->list_b);
+	if (before == 0)
+		free(c->new_tab);
+}
 
 int	count_str(char *s1, char c)
 {
@@ -63,7 +78,7 @@ char	*ft_strtrim(char *s1, char set)
 	return (str);
 }
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ret;
 	int		i;
@@ -90,7 +105,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	return (ret);
 }
 
-char		*ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char	*str;
 	int		i;

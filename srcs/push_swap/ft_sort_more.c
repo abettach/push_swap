@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:34 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/15 14:31:13 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 12:09:39 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,6 @@ void	last_sort(t_cheker *c, int pos_num, int midle_stack)
 	}
 }
 
-void	solution_for_more_2(t_cheker *c)
-{
-	while (c->len)
-		ft_do_pb(c, 0);
-	last_sort(c, 0, 0);
-}
-
 void	ft_sort_more(t_cheker *c, int nbr_chunk, int chunk_size)
 {
 	int	i;
@@ -99,5 +92,7 @@ void	ft_sort_more(t_cheker *c, int nbr_chunk, int chunk_size)
 		chunk_size += inc;
 		i++;
 	}
-	solution_for_more_2(c);
+	while (c->len)
+		ft_do_pb(c, 0);
+	last_sort(c, 0, 0);
 }

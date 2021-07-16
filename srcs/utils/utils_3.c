@@ -6,29 +6,31 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:10:09 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/15 14:10:10 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 10:05:40 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int     ft_get_len_ini(char **av)
+int	ft_get_len_ini(char **av)
 {
-    int i = 1;
-    int len = 0;
-    while (av[i])
-    {
-        i++;
-        len++;
-    }
-    return len;
-}
+	int		i;
+	int		len;
 
+	i = 1;
+	len = 0;
+	while (av[i])
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
 
 int	get_spaces(char *str, int ret)
 {
 	int		i;
-	int k;
+	int		k;
 	char	**split;
 
 	i = 0;
@@ -40,14 +42,15 @@ int	get_spaces(char *str, int ret)
 	}
 	k = 0;
 	if (split[k])
+	{	
 		while (split[k])
 		{
 			free(split[k]);
 			k++;
 		}
+	}
 	if (split)
 		free(split);
-
 	return (ret);
 }
 
@@ -90,24 +93,26 @@ void	get_btween_quots(t_cheker *c, char **av, int i, int *j)
 	}
 	k = 0;
 	if (split[k])
+	{
 		while (split[k])
 		{
 			free(split[k]);
 			k++;
 		}
+	}
 	if (split)
 		free(split);
 }
 
 void	ft_get_corr_args(t_cheker *c, char **av)
 {
-	int	i;
-	int	lengt;
-	int	j;
+	int		i;
+	int		lengt;
+	int		j;
 
 	j = 0;
 	i = 1;
-	lengt = get_corr_len(c,av);
+	lengt = get_corr_len(c, av);
 	c->len_ini = lengt;
 	c->new_av = (char **)malloc(sizeof(char *) * (lengt + 1));
 	while (av[i])
