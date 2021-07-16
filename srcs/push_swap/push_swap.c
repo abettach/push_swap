@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:41 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 11:16:13 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 13:08:20 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 void	ft_push_swap(t_cheker *c)
 {
-	if (c->len == 2)
-	{
-		if (c->list_a[0] > c->list_a[1])
-			ft_do_sa(c, 0);
-	}
+	if (c->len == 2 && c->list_a[0] > c->list_a[1])
+		ft_do_sa(c, 0);
 	else if (c->len == 3)
 		ft_sort_3numbers(c);
 	else if (c->len > 3 && c->len <= 5)

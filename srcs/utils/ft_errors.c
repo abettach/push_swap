@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:49:37 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 09:58:46 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 13:18:08 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,4 @@ int	ft_check_error(t_cheker *c)
 	if (ft_check_double(c) == -1 || ft_check_args(c) == -1)
 		return (-1);
 	return (1);
-}
-
-void	ft_error(char *str)
-{
-	ft_putstr_fd("Error\n", STDERR);
-	ft_putstr_fd(str, STDERR);
-	ft_putstr_fd("\n", STDERR);
 }
