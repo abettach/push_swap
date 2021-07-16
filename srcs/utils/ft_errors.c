@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:49:37 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 13:18:08 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/16 13:48:30 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_check_double(t_cheker *c)
 	int		i;
 
 	i = 0;
-	while (i < c->len)
+	while (i < c->len - 1)
 	{
 		if (c->new_tab[i] == c->new_tab[i + 1])
 			return (-1);
