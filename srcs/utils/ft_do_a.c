@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:59 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 09:48:14 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/17 10:55:35 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	ft_do_rra(t_cheker *c, int cheker)
 void	ft_do_pa(t_cheker *c, int cheker)
 {
 	int	i;
-	int	*list;
 
 	i = 0;
 	c->len++;

@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:41 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 13:46:11 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/17 10:57:12 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,26 @@ int	main(int ac, char **av)
 {
 	t_cheker	c;
 
-	ft_get_corr_args(&c, av);
-	c.list_a = malloc(sizeof(int) * (c.len_ini + 1));
-	c.list_b = malloc(sizeof(int) * (c.len_ini + 1));
-	ft_copy_args_to_stack(&c);
-	c.len = c.len_ini;
-	c.len_b = 0;
-	c.pb = 0;
-	ft_copy_stack_to_tab(&c, 0);
-	ft_sort_table(&c);
-	if ((ft_check_error(&c)) == -1)
-		write (2, "Error\n", 6);
-	if (ft_check_error(&c) == -1 || c.len_ini <= 1)
+	if (ac > 1)
 	{
+		ft_get_corr_args(&c, av);
+		c.list_a = malloc(sizeof(int) * (c.len_ini + 1));
+		c.list_b = malloc(sizeof(int) * (c.len_ini + 1));
+		ft_copy_args_to_stack(&c);
+		c.len = c.len_ini;
+		c.len_b = 0;
+		c.pb = 0;
+		ft_copy_stack_to_tab(&c, 0);
+		ft_sort_table(&c);
+		if ((ft_check_error(&c)) == -1)
+			write (2, "Error\n", 6);
+		if (ft_check_error(&c) == -1 || c.len_ini <= 1)
+		{
+			ft_free_all(&c, 0);
+			exit(0);
+		}
+		ft_push_swap(&c);
 		ft_free_all(&c, 0);
-		exit(0);
 	}
-	ft_push_swap(&c);
-	ft_free_all(&c, 0);
 	return (0);
 }

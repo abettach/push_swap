@@ -2,7 +2,7 @@ NAME = push_swap
 NAME_CHECKER = checker
 
 CC = gcc
-CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror
 
 INC =-I./inc
 

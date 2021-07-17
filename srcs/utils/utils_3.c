@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:10:09 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 10:05:40 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/17 10:56:25 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	get_spaces(char *str, int ret)
 	return (ret);
 }
 
-int	get_corr_len(t_cheker *c, char **av)
+int	get_corr_len(char **av)
 {
 	int	i;
 	int	j;
@@ -112,7 +112,7 @@ void	ft_get_corr_args(t_cheker *c, char **av)
 
 	j = 0;
 	i = 1;
-	lengt = get_corr_len(c, av);
+	lengt = get_corr_len(av);
 	c->len_ini = lengt;
 	c->new_av = (char **)malloc(sizeof(char *) * (lengt + 1));
 	while (av[i])

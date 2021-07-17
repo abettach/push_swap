@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:34 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 13:05:03 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/17 10:57:40 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	get_big_nbr(t_cheker *c)
 {
-	int	*tmp;
 	int	ret;
 	int	i;
 
@@ -31,7 +30,6 @@ int	get_big_nbr(t_cheker *c)
 
 int	get_big_nbr_pos(t_cheker *c, int nbr)
 {
-	int	ret;
 	int	i;
 
 	i = 0;
