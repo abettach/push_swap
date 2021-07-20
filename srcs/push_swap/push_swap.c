@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:41 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/17 10:57:12 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_push_swap(t_cheker *c)
+void	ft_push_swap(t_push *c)
 {
 	if (c->len == 2 && c->list_a[0] > c->list_a[1])
 		ft_do_sa(c, 0);
@@ -31,7 +31,7 @@ void	ft_push_swap(t_cheker *c)
 
 int	main(int ac, char **av)
 {
-	t_cheker	c;
+	t_push	c;
 
 	if (ac > 1)
 	{

@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:59 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/17 10:55:35 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_do_sa(t_cheker *c, int cheker)
+void	ft_do_sa(t_push *c, int cheker)
 {
 	int	tmp;
 
@@ -23,7 +23,7 @@ void	ft_do_sa(t_cheker *c, int cheker)
 		ft_putstr_fd("sa\n", 1);
 }
 
-void	ft_do_ra(t_cheker *c, int cheker)
+void	ft_do_ra(t_push *c, int cheker)
 {
 	int		tmp;
 	int		i;
@@ -41,7 +41,7 @@ void	ft_do_ra(t_cheker *c, int cheker)
 		ft_putstr_fd("ra\n", 1);
 }
 
-void	ft_do_rra(t_cheker *c, int cheker)
+void	ft_do_rra(t_push *c, int cheker)
 {
 	int		*list;
 	int		j;
@@ -68,7 +68,7 @@ void	ft_do_rra(t_cheker *c, int cheker)
 		ft_putstr_fd("rra\n", 1);
 }
 
-void	ft_do_pa(t_cheker *c, int cheker)
+void	ft_do_pa(t_push *c, int cheker)
 {
 	int	i;
 

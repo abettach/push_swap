@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:29:44 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 14:06:04 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_sort_checker_more(t_cheker *c, char *arg)
+void	ft_sort_push_more(t_push *c, char *arg)
 {
 	if (strcmp(arg, "ra") == 0)
 		ft_do_ra(c, 1);
@@ -34,7 +34,7 @@ void	ft_sort_checker_more(t_cheker *c, char *arg)
 	}
 }
 
-void	ft_sort_checker(t_cheker *c, char *arg)
+void	ft_sort_push(t_push *c, char *arg)
 {
 	if (strcmp(arg, "sa") == 0)
 		ft_do_sa(c, 1);
@@ -50,7 +50,7 @@ void	ft_sort_checker(t_cheker *c, char *arg)
 	else if (strcmp(arg, "pb") == 0)
 		ft_do_pb(c, 1);
 	else
-		ft_sort_checker_more(c, arg);
+		ft_sort_push_more(c, arg);
 }
 
 int	check_command(char *command)
@@ -65,7 +65,7 @@ int	check_command(char *command)
 	return (1);
 }
 
-void	ft_checker(t_cheker *c)
+void	ft_push(t_push *c)
 {
 	char	*arg;
 
@@ -78,7 +78,7 @@ void	ft_checker(t_cheker *c)
 			free(arg);
 			exit(0);
 		}
-		ft_sort_checker(c, arg);
+		ft_sort_push(c, arg);
 		free(arg);
 	}
 	if (ft_check_sort(c) == 0)
@@ -89,7 +89,7 @@ void	ft_checker(t_cheker *c)
 
 int	main(int ac, char **av)
 {
-	t_cheker	c;
+	t_push	c;
 
 	if (ac > 1)
 	{
@@ -109,7 +109,7 @@ int	main(int ac, char **av)
 			ft_free_all(&c, 0);
 			exit(0);
 		}
-		ft_checker(&c);
+		ft_push(&c);
 		ft_free_all(&c, 0);
 	}
 	return (0);

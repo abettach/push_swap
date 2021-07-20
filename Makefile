@@ -28,11 +28,11 @@ CHECKER		=	./srcs/checker/checker.c
 
 
 SRCS_PUSH		=	$(PUSH)
-SRCS_CHECKER	=	$(CHECKER)
+SRCs_push	=	$(CHECKER)
 
 OBJ=$(SRCS:.c=.o)
 OBJ_PUSH=$(SRCS_PUSH:.c=.o)
-OBJ_CHECKER=$(SRCS_CHECKER:.c=.o)
+OBJ_CHECKER=$(SRCs_push:.c=.o)
 
 all:
 	@$(MAKE) $(NAME) --no-print-directory

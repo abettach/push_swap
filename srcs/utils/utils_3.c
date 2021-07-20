@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:10:09 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/17 10:56:25 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	get_corr_len(char **av)
 	return (ret);
 }
 
-void	get_btween_quots(t_cheker *c, char **av, int i, int *j)
+void	get_btween_quots(t_push *c, char **av, int i, int *j)
 {
 	char	**split;
 	int		k;
@@ -104,7 +104,7 @@ void	get_btween_quots(t_cheker *c, char **av, int i, int *j)
 		free(split);
 }
 
-void	ft_get_corr_args(t_cheker *c, char **av)
+void	ft_get_corr_args(t_push *c, char **av)
 {
 	int		i;
 	int		lengt;

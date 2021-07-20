@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:29 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 12:28:28 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	get_scan_top(t_cheker *c, int chunk_size)
+int	get_scan_top(t_push *c, int chunk_size)
 {
 	int	i;
 	int	indice;
@@ -35,7 +35,7 @@ int	get_scan_top(t_cheker *c, int chunk_size)
 	return (-1);
 }
 
-int	get_scan_end(t_cheker *c, int chunk_size)
+int	get_scan_end(t_push *c, int chunk_size)
 {
 	int	i;
 	int	moves;
@@ -58,7 +58,7 @@ int	get_scan_end(t_cheker *c, int chunk_size)
 	return (-1);
 }
 
-void	push_a_to_b(t_cheker *c, int chunk_size)
+void	push_a_to_b(t_push *c, int chunk_size)
 {
 	int	move_top;
 	int	move_end;

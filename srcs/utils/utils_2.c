@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:10:12 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 14:14:45 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putstr_fd(char *s, int fd)
 			write(fd, &s[i++], 1);
 }
 
-int	ft_atoi(const char *str, t_cheker *c)
+int	ft_atoi(const char *str, t_push *c)
 {
 	int		s;
 	long	r;

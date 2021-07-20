@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:49:37 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 13:48:30 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	ft_check_double(t_cheker *c)
+int	ft_check_double(t_push *c)
 {
 	int		i;
 
@@ -26,7 +26,7 @@ int	ft_check_double(t_cheker *c)
 	return (1);
 }
 
-int	ft_check_args(t_cheker *c)
+int	ft_check_args(t_push *c)
 {
 	int		i;
 	int		j;
@@ -51,7 +51,7 @@ int	ft_check_args(t_cheker *c)
 	return (1);
 }
 
-int	ft_check_error(t_cheker *c)
+int	ft_check_error(t_push *c)
 {
 	if (ft_check_double(c) == -1 || ft_check_args(c) == -1)
 		return (-1);

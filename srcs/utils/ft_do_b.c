@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:37:35 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 14:13:32 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_do_sb(t_cheker *c, int cheker)
+void	ft_do_sb(t_push *c, int cheker)
 {
 	int		tmp;
 
@@ -23,7 +23,7 @@ void	ft_do_sb(t_cheker *c, int cheker)
 		ft_putstr_fd("sb\n", 1);
 }
 
-void	ft_do_rb(t_cheker *c, int cheker)
+void	ft_do_rb(t_push *c, int cheker)
 {
 	int		tmp;
 	int		i;
@@ -41,7 +41,7 @@ void	ft_do_rb(t_cheker *c, int cheker)
 		ft_putstr_fd("rb\n", 1);
 }
 
-void	ft_do_rrb(t_cheker *c, int cheker)
+void	ft_do_rrb(t_push *c, int cheker)
 {
 	int		*list;
 	int		i;
@@ -69,7 +69,7 @@ void	ft_do_rrb(t_cheker *c, int cheker)
 		ft_putstr_fd("rrb\n", 1);
 }
 
-void	ft_do_pb_2(t_cheker *c)
+void	ft_do_pb_2(t_push *c)
 {
 	int		i;
 	int		j;
@@ -97,7 +97,7 @@ void	ft_do_pb_2(t_cheker *c)
 	tmp = NULL;
 }
 
-void	ft_do_pb(t_cheker *c, int cheker)
+void	ft_do_pb(t_push *c, int cheker)
 {
 	int		i;
 

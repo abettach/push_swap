@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:10:04 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 14:15:38 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_free_all(t_cheker *c, int before)
+void	ft_free_all(t_push *c, int before)
 {
 	int		i;
 

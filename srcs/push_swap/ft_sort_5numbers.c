@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:25 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 12:58:49 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_sort_5numbers_2(t_cheker *c)
+void	ft_sort_5numbers_2(t_push *c)
 {
 	int	len;
 
@@ -36,7 +36,7 @@ void	ft_sort_5numbers_2(t_cheker *c)
 	}
 }
 
-void	ft_sort_5numbers(t_cheker *c)
+void	ft_sort_5numbers(t_push *c)
 {
 	int	median_stack;
 	int	i;

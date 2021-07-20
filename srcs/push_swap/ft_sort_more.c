@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:36:34 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/17 10:57:40 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	get_big_nbr(t_cheker *c)
+int	get_big_nbr(t_push *c)
 {
 	int	ret;
 	int	i;
@@ -28,7 +28,7 @@ int	get_big_nbr(t_cheker *c)
 	return (ret);
 }
 
-int	get_big_nbr_pos(t_cheker *c, int nbr)
+int	get_big_nbr_pos(t_push *c, int nbr)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ int	get_big_nbr_pos(t_cheker *c, int nbr)
 	return (-1);
 }
 
-void	last_sort(t_cheker *c, int pos_num, int midle_stack)
+void	last_sort(t_push *c, int pos_num, int midle_stack)
 {
 	int	big_nbr;
 	int	i;
@@ -71,7 +71,7 @@ void	last_sort(t_cheker *c, int pos_num, int midle_stack)
 	}
 }
 
-void	ft_sort_more(t_cheker *c, int nbr_chunk, int chunk_size)
+void	ft_sort_more(t_push *c, int nbr_chunk, int chunk_size)
 {
 	int	i;
 	int	j;

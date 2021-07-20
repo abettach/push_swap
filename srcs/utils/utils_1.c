@@ -6,13 +6,13 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:10:15 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/16 14:16:05 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	ft_check_sort(t_cheker *c)
+int	ft_check_sort(t_push *c)
 {
 	int		i;
 	int		j;
@@ -29,7 +29,7 @@ int	ft_check_sort(t_cheker *c)
 	return (1);
 }
 
-void	ft_copy_args_to_stack(t_cheker *c)
+void	ft_copy_args_to_stack(t_push *c)
 {
 	int		i;
 
@@ -62,7 +62,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-void	ft_sort_table(t_cheker *c)
+void	ft_sort_table(t_push *c)
 {
 	int	tmp;
 	int	i;
@@ -88,7 +88,7 @@ void	ft_sort_table(t_cheker *c)
 	}
 }
 
-void	ft_copy_stack_to_tab(t_cheker *c, int checker)
+void	ft_copy_stack_to_tab(t_push *c, int checker)
 {
 	int	i;
 
