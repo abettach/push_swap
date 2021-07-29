@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: abettach <abettach@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/07/27 19:18:23 by abettach          #+#    #+#              #
+#    Updated: 2021/07/27 20:09:26 by abettach         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap
 NAME_CHECKER = checker
 
@@ -28,7 +40,7 @@ CHECKER		=	./srcs/checker/checker.c
 
 
 SRCS_PUSH		=	$(PUSH)
-SRCs_push	=	$(CHECKER)
+SRCs_push	=	$(CHECKER) 
 
 OBJ=$(SRCS:.c=.o)
 OBJ_PUSH=$(SRCS_PUSH:.c=.o)
@@ -52,14 +64,11 @@ bonus:
 
 $(NAME_CHECKER): $(OBJ) $(OBJ_CHECKER) $(OBJ_PUSH)
 	@$(CC) $(CFLAGS) $(INC) $(OBJ) $(OBJ_CHECKER) -o $(NAME_CHECKER)
-	@echo "\033[1;33mMake \033[1;32m\t    [OK]"
+	@echo "\033[1;33mMake bonus\033[1;32m\t    [OK]"
 	@echo "~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	@echo "\033[1;32m| \033[1;33m" $(NAME_CHECKER) : Created ! "\033[1;32m|"
+	@echo "\033[1;32m| \033[1;33m" $(NAME_CHECKER) : Created ! "\033[1;32m  |"
 	@echo "\033[1;32m~~~~~~~~~~~~~~~~~~~~~~~~~~"
-test:
-	@make re --no-print-directory
-	@make bonus --no-print-directory
-	@make clean --no-print-directory
+
 clean:
 	@rm -f $(OBJ) $(OBJ_PUSH) $(OBJ_CHECKER)
 	@echo "\033[1;33mMake clean \033[1;32m [OK]"

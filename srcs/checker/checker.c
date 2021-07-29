@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:29:44 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/27 19:12:56 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ft_push(t_push *c)
 		ft_sort_push(c, arg);
 		free(arg);
 	}
-	if (ft_check_sort(c) == 0)
+	if (ft_check_sort(c) == 0 || c->len_b)
 		ft_putstr_fd("KO\n", 1);
 	else if (ft_check_sort(c) == 1)
 		ft_putstr_fd("OK\n", 1);

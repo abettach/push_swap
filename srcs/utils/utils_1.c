@@ -6,7 +6,7 @@
 /*   By: abettach <abettach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:10:15 by abettach          #+#    #+#             */
-/*   Updated: 2021/07/20 20:18:18 by abettach         ###   ########.fr       */
+/*   Updated: 2021/07/23 16:38:36 by abettach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	ft_copy_stack_to_tab(t_push *c, int checker)
 		i++;
 	}
 	c->new_tab[i] = '\0';
-	if (ft_check_sort(c) == 1 && checker == 0)
+	if (ft_check_sort(c) == 1 && checker == 0 && ft_check_error(c) != -1)
 	{
 		ft_free_all(c, 0);
 		exit(0);
